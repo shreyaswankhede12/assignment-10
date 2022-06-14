@@ -1,0 +1,70 @@
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 10\\Probability and Random Variables} 
+\author{Shreyas Wankhede}
+\date{\today}
+\institute{IIT Hyderabad}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+
+\begin{block}{Question 8.26}
+
+ A new car is introduced with the claim that its average mileage in highway driving is at least
+28 miles per gallon. Seventeen cars are tested, and the following mileage is obtained:\\
+19\hspace{2.5mm} 20 \hspace{2.5mm} 24\hspace{2.5mm}  25 \hspace{2.5mm} 26\hspace{2.5mm}  26.8 \hspace{2.5mm} 27.2 \hspace{2.5mm} 27.5 \\28\hspace{2.5mm}  28.2 \hspace{2.5mm} 28.4 \hspace{2.5mm} 29 \hspace{2.5mm} 30 \hspace{2.5mm} 31 \hspace{2.5mm} 32\hspace{2.5mm} 33.3 \hspace{2.5mm} 35\\
+Can we conclude with significance level at most 0.05 that the claim is true?
+\end{block}
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+    Our objective is to test the composite null hypothesis $\eta>\eta_0=28$ against the hypothesis $\eta< \eta_0$. Consider first the simple null hypothesis $\eta=\eta_0=28$. In this case, we can use,
+    \begin{align}
+    q&=\dfrac{\overline{x}-\eta_0}{s/\sqrt{n}}\nonumber\\\nonumber
+    \overline{x}&=\dfrac{1}{17}\sum x_i=27.67\\\nonumber
+    s^2&=\dfrac{1}{16}\sum(x_i-\overline{x})=17.6\nonumber
+    \end{align}
+\end{frame} 
+
+\begin{frame}
+This yields $s=4.2$ and $q=-0.33$. Since
+\begin{align}
+q_u=t_u(n-1)=t_{0.05}(16)=-1.95<-0.33\nonumber
+\end{align}
+\begin{block}{conclusions}
+we conclude that the evidence does not support rejection of the hypothesis $\eta=28$.\\
+If $\eta_0>28$ , then the corresponding value of q is larger than -0.33.\\From this it follows that the evidence does not support the hypothesis $\eta_0$ for any $\eta_0>28$.
+\end{block}
+
+\end{frame}
+
+\end{document}
